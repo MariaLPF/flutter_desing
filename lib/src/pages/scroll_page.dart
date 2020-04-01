@@ -96,9 +96,7 @@ class  ScrollPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
           child: Text('Bienvenido', style:TextStyle(fontSize:20.0))
         ),
-        onPressed: (()=>{
-          print('Se a pulsado el boton')
-        })
+        onPressed: (()=>print('Se a pulsado el boton'))
       )
     );
   }
