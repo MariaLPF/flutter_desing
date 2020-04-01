@@ -9,7 +9,30 @@ class ButtonsPage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           _backgroundApp(),
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                _titles(),
+              ],
+            )
+          ),
         ],
+      ),
+      bottomNavigationBar:  BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            title: Container()
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.pie_chart_outlined),
+            title: Container()
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.supervised_user_circle),
+            title: Container()
+          ),
+        ]
       ),
     );
   }
@@ -26,7 +49,7 @@ class ButtonsPage extends StatelessWidget {
         );
       }
     
-      Widget _gradientBackgroundApp() {
+  Widget _gradientBackgroundApp() {
         final gradient = Container(
           width: double.infinity,
           height: double.infinity,
@@ -43,7 +66,7 @@ class ButtonsPage extends StatelessWidget {
         return gradient;
       }
     
-      Widget _pingkBox() {
+  Widget _pingkBox() {
         return Transform.rotate(
           angle: -pi/5.0,
           child: Container(
@@ -61,4 +84,27 @@ class ButtonsPage extends StatelessWidget {
           )
         );
       }
+
+  Widget _titles(){
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.all(20.0), 
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Classify transact', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold),),
+            SizedBox(height: 10.0),
+            Text('Classify this transaction into a particular category', style: TextStyle(color: Colors.white, fontSize: 18.0),)
+          ]
+        ),
+      ),
+    );
+  }
+
+  Widget _bottomNavigationBar(){
+
+    
+
+  }
+
 }
